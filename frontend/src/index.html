@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Клуб настольных игр</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎲 Клуб настольных игр</h1>
+    <p>Вариант №30 · Docker Compose: frontend + backend + PostgreSQL + web-service</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Коллекция клуба (БД)</h2>
+      <button id="btn-collection">Показать коллекцию клуба</button>
+      <form id="add-form">
+        <input name="title" placeholder="Название" required>
+        <input name="min_players" type="number" min="1" placeholder="Мин. игроков" required>
+        <input name="max_players" type="number" min="1" placeholder="Макс. игроков" required>
+        <input name="play_time" type="number" min="1" placeholder="Время, мин" required>
+        <input name="genre" placeholder="Жанр">
+        <button type="submit">Добавить в коллекцию</button>
+      </form>
+      <div id="collection-out"></div>
+    </section>
+
+    <section class="card">
+      <h2>Поиск игр (Web-сервис)</h2>
+      <div class="row">
+        <label>Игроков <input id="players" type="number" min="1" value="4"></label>
+        <label>Время до, мин <input id="max-time" type="number" min="1" value="60"></label>
+        <button id="btn-search">Найти игры</button>
+      </div>
+      <div id="search-out"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
